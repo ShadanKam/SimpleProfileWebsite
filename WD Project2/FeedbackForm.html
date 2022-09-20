@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- external stylesheet -->
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        </head>
+        <body>
+            <form>
+                <fieldset>
+                    <h3>Feedback Form</h3>
+                    <p class="frm">Please fill out this form to help me improve My site.</p>
+
+		<!-- applying textfields and validating them in submiting -->
+
+Name	
+                    <input type= "text" id= "name" name= "name" class="textfield" onsubmit= "validateFormName()"/>
+                    <br />
+E-mail Address	
+                    <input type= "email" id= "email" name= "email" class="textfield" onsubmit= "validateFormEmail()"/>
+                    <br />
+
+		<!-- check boxes -->
+
+                    <p class="frm">Things you like on My site:
+	
+                        <br />
+                        <input type= "checkbox" id= "check1" name= "check1" value="Site Design "/>Site design
+                        <br/>
+                        <input type= "checkbox" id= "check2" name= "check2" value="Contents "/>Contents
+                        <br />
+                        <input type= "checkbox" id= "check3" name= "check3" value="Ease of Use" "/>Ease of use
+                        <br />
+                    </p>
+
+
+		<!-- buttons -->
+
+                    <button type= "submit" onclick="displayForm()">Submit Your Entries</button>
+                    <button type= "reset">Clear Your Entries</button>
+                </fieldset>
+            </form>
+		<!-- functions -->
+            <script>
+
+
+function displayForm(){
+	var x1= "~"+document.getElementById("check1").value;
+	var x2= "~"+document.getElementById("check2").value;
+	var x3= "~"+document.getElementById("check3").value;
+	var x4= "Things you have liked on my site: ";
+	
+	if(document.getElementById("check1").checked){
+		x4+= x1;}
+	if(document.getElementById("check2").checked){
+		x4+= x2;}
+	if(document.getElementById("check3").checked){
+		x4+= x3;}
+window.alert("Thanks " + document.getElementById("name").value + " for your comments.." +
+	"Your email: " + document.getElementById("email").value +". "+ x4);
+	
+	
+}
+
+function validateFormName() {
+  var x = document.getElementById["name"].value;
+  if (x == null) {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+
+function validateFormEmail() {
+  var x = document.getElementById["email"].value;
+  if (x == null) {
+    alert("E-mail must be filled out");
+    return false;
+  }
+}
+</script>
+        </body>
+    </html>

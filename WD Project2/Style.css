@@ -1,0 +1,89 @@
+/* An extrnal stylesheet */
+ body {
+     color: #F3E7E7;
+     align-content: center;
+     background-color: #DDB9B9;
+     font-size: 100%;
+}
+ h1 {
+     font-family: verdana;
+     color: #FF0000;
+     text-align: center;
+}
+ h2 {
+     font-weight: light;
+     font-family: lucida console;
+     color: #F3E7E7;
+     text-align: center;
+     text-decoration: bold;
+}
+ h3 {
+     color: #F3E7E7;
+     text-align: left;
+}
+ h4 {
+     color: #F3E7E7;
+     padding-bottom: 0.1%;
+     position: absolute;
+     text-align: center;
+     bottom: 0;
+     padding-left: 36%;
+     font-weight: light;
+}
+ h5 {
+     color: #F3E7E7;
+     font-style:oblique;
+     text-align: center;
+     color: #AD8EA7;
+}
+ frame {
+     border:3px solid black;
+}
+ legend {
+     align: left;
+}
+ input {
+     align-items:center;
+}
+ form {
+     align-content: center;
+     padding: 150px;
+     padding-top:10px;
+     padding-bottom: 50px;
+     
+}
+ form fieldset {
+     align-content: center;
+     background-color: #D88DD8;
+}
+ .hide {
+     display: none;
+}
+ .myDIV:hover + .hide {
+     display: block;
+     font-size: 20px;
+     text-align: left;
+}
+ script {
+     color: #F3E7E7;
+     text-align: center;
+     align-content: center;
+     background-color: #CB876D;
+}
+ ul {
+     text-align: left;
+     color:#B96F6F;
+}
+ a {
+     color: #74138C;
+}
+ .textfield {
+     justify-content: center;
+}
+ p {
+     color: #AD8EA7;
+}
+ p.frm {
+     color: #F3E7E7;
+     text-decoration: bold;
+}

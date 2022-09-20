@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<!-- external stylesheet -->
+        <link rel= "stylesheet" type= "text/css" href= "Style.css"/>
+    </head>
+    <body>
+        <form name="form1">
+            <fieldset>
+                <legend>
+                    <b>My C.V</b>
+                </legend>
+
+		<!-- text fields, radio buttons, dates drop down lists/ textfields, text areas. and checkboxes -->
+
+Name: 
+                <input type= "text" id= "name" name= "name" class="textfield" value="Ali Ahmed">
+                    <br />
+Sex: 
+                    <input type= "radio" id= "male" name= "sex" value= "male" checked>
+                        <label for= "male">Male</label>
+                        <input type= "radio" id= "female" name= "sex" value= "female">
+                            <label for= "female">Female</label>
+                            <br />
+Nationality: 
+                            <input type= "text" id= "nation" name= "nation" class="textfield" value= "Saudi">
+                                <br/ >
+Date of Birth: 
+                                    <select name= "DayList" id= "day" name= "day">
+                                        <option value="0">Day</option>
+                                        <option value="1"selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                    <select name= "MonthList" id= "month" name= "month">
+                                        <option value="0">Month</option>
+                                        <option value="1"selected>January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                    <input type="text" id= "year" name= "year" width=20px value="1980">
+                                        <br />
+
+E-mail: 
+                                        <input type= "email" id= "email" name= "email" class="textfield" onsubmit= "validateForm(id)">
+                                            <br />
+
+Telephone: 
+                                            <input type= "tel" id= "num" name= "num" class="textfield" onsubmit= "validateForm(id)">
+                                                <br />
+
+Qualifications: 
+                                                <p>
+                                                    <textarea id= "qualifications" class="textfield" name= "qualifications" onsubmit= "validateForm(id)"></textarea>
+                                                </p>
+
+Training and Course: 
+                                                <p>
+                                                    <textarea id= "TaC" name= "TaC" class="textfield" onsubmit= "validateForm(id)"></textarea>
+                                                </p>
+
+Language: 
+                                                <input type= "checkbox" id= "check1" name= "check1" value= "Arabic"/>Arabic
+	
+                                                <input type= "checkbox" id= "check2" name= "check2" value= "English"/>English
+	
+                                                <input type= "checkbox" id= "check3" name= "check3" value= "French"/>French
+                                                <br />
+<div id= "newField"></div>
+
+		<!-- buttons -->
+
+                            <input type= "button" value= "Add Field" onclick= "addField()"/>
+                            <input type= "submit" value= "Submit" onclick= "displayCV()"/>
+                            <input type= "reset" value= "Clear"/>
+                                            </fieldset>
+                                        </form>
+		<!-- functions -->
+                                        <script>
+
+function addField() {
+	var x = document.createElement("INPUT");
+	x.setAttribute("type", "text");
+	document.body.appendChild(x);
+	var x2= document.getElementById("newField");
+	x2.insertBefore(x, x2.childNodes[0]);
+}
+function validateForm(id) {
+  var x = document.getElementById['id'].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+function displayCV(){
+	var x1= "~"+document.getElementById("check1").value;
+	var x2= "~"+document.getElementById("check2").value;
+	var x3= "~"+document.getElementById("check3").value;
+	var x4= "";
+	var message= "";	
+	if(document.getElementById("check1").checked){
+		x4+= x1;}
+	if(document.getElementById("check2").checked){
+		x4+= x2;}
+	if(document.getElementById("check3").checked){
+		x4+= x3;}
+
+  message = "<ul><li><b>NAME: </b>" + document.form1.name.value + "</li><br />";
+  message += "<li><b>SEX: </b>" + document.form1.sex.value + "</li><br />";
+  message += "<li><b>NATIONALITY: </b>" + document.form1.nation.value + "</li><br />";
+  message += "<li><b>DOB: </b>" + document.form1.day.value + ", " + document.form1.month.value + ", " + document.form1.year.value + "</li><br />";
+  message += "<li><b>EMAIL: </b>" + document.form1.email.value + "</li><br />";
+  message += "<li><b>TELEPHONE: </b>" + document.form1.num.value + "</li><br />";
+  message += "<li><b>QUALIFICATIONS: </b>" + document.form1.qualifications.value + "</li><br />";
+  message += "<li><b>TRAINING AND COURSES: </b>" + document.form1.TaC.value + "</li><br />";
+  message += "<li><b>LANGUAGES: </b>" + x4 + "</li></ul>";
+
+	document.write(message);
+	
+}
+
+
+
+                                            </script>
+                                        </body>
+				</html>
